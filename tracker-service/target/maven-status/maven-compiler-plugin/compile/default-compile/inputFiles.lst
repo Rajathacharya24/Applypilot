@@ -1,1 +1,13 @@
 /home/rajathacharya/APPLYPILOT/Applypilot/tracker-service/src/main/java/com/applypilot/tracker/TrackerServiceApplication.java
+/home/rajathacharya/APPLYPILOT/Applypilot/tracker-service/src/main/java/com/applypilot/tracker/controller/JobApplicationController.java
+/home/rajathacharya/APPLYPILOT/Applypilot/tracker-service/src/main/java/com/applypilot/tracker/dto/CreateJobApplicationRequest.java
+/home/rajathacharya/APPLYPILOT/Applypilot/tracker-service/src/main/java/com/applypilot/tracker/dto/JobApplicationDto.java
+/home/rajathacharya/APPLYPILOT/Applypilot/tracker-service/src/main/java/com/applypilot/tracker/dto/UpdateStatusRequest.java
+/home/rajathacharya/APPLYPILOT/Applypilot/tracker-service/src/main/java/com/applypilot/tracker/entity/ApplicationStatus.java
+/home/rajathacharya/APPLYPILOT/Applypilot/tracker-service/src/main/java/com/applypilot/tracker/entity/JobApplication.java
+/home/rajathacharya/APPLYPILOT/Applypilot/tracker-service/src/main/java/com/applypilot/tracker/exception/GlobalExceptionHandler.java
+/home/rajathacharya/APPLYPILOT/Applypilot/tracker-service/src/main/java/com/applypilot/tracker/repository/JobApplicationRepository.java
+/home/rajathacharya/APPLYPILOT/Applypilot/tracker-service/src/main/java/com/applypilot/tracker/security/JwtFilter.java
+/home/rajathacharya/APPLYPILOT/Applypilot/tracker-service/src/main/java/com/applypilot/tracker/security/JwtUtil.java
+/home/rajathacharya/APPLYPILOT/Applypilot/tracker-service/src/main/java/com/applypilot/tracker/security/SecurityConfig.java
+/home/rajathacharya/APPLYPILOT/Applypilot/tracker-service/src/main/java/com/applypilot/tracker/service/JobApplicationService.java

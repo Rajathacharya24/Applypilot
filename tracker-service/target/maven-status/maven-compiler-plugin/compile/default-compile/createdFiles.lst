@@ -1,1 +1,13 @@
+com/applypilot/tracker/entity/ApplicationStatus.class
+com/applypilot/tracker/security/JwtFilter.class
+com/applypilot/tracker/exception/GlobalExceptionHandler.class
+com/applypilot/tracker/dto/CreateJobApplicationRequest.class
+com/applypilot/tracker/service/JobApplicationService.class
+com/applypilot/tracker/dto/UpdateStatusRequest.class
+com/applypilot/tracker/entity/JobApplication.class
+com/applypilot/tracker/repository/JobApplicationRepository.class
+com/applypilot/tracker/controller/JobApplicationController.class
+com/applypilot/tracker/dto/JobApplicationDto.class
+com/applypilot/tracker/security/JwtUtil.class
 com/applypilot/tracker/TrackerServiceApplication.class
+com/applypilot/tracker/security/SecurityConfig.class
