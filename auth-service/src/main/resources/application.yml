@@ -17,3 +17,7 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
+jwt:
+  secret: ${JWT_SECRET:thisIsADefaultSecretKeyThatShouldBeReplacedInProductionItNeedsToBeLongEnoughForHS256}
+  expiration: ${JWT_EXPIRATION:86400000}

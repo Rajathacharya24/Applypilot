@@ -1,1 +1,11 @@
+com/applypilot/auth/entity/User.class
 com/applypilot/auth/AuthServiceApplication.class
+com/applypilot/auth/dto/RegisterRequest.class
+com/applypilot/auth/service/AuthService.class
+com/applypilot/auth/controller/AuthController.class
+com/applypilot/auth/dto/AuthResponse.class
+com/applypilot/auth/dto/LoginRequest.class
+com/applypilot/auth/security/SecurityConfig.class
+com/applypilot/auth/repository/UserRepository.class
+com/applypilot/auth/security/JwtUtil.class
+com/applypilot/auth/security/JwtFilter.class

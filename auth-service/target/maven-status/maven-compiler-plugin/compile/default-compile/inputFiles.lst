@@ -1,1 +1,11 @@
 /home/rajathacharya/APPLYPILOT/Applypilot/auth-service/src/main/java/com/applypilot/auth/AuthServiceApplication.java
+/home/rajathacharya/APPLYPILOT/Applypilot/auth-service/src/main/java/com/applypilot/auth/controller/AuthController.java
+/home/rajathacharya/APPLYPILOT/Applypilot/auth-service/src/main/java/com/applypilot/auth/dto/AuthResponse.java
+/home/rajathacharya/APPLYPILOT/Applypilot/auth-service/src/main/java/com/applypilot/auth/dto/LoginRequest.java
+/home/rajathacharya/APPLYPILOT/Applypilot/auth-service/src/main/java/com/applypilot/auth/dto/RegisterRequest.java
+/home/rajathacharya/APPLYPILOT/Applypilot/auth-service/src/main/java/com/applypilot/auth/entity/User.java
+/home/rajathacharya/APPLYPILOT/Applypilot/auth-service/src/main/java/com/applypilot/auth/repository/UserRepository.java
+/home/rajathacharya/APPLYPILOT/Applypilot/auth-service/src/main/java/com/applypilot/auth/security/JwtFilter.java
+/home/rajathacharya/APPLYPILOT/Applypilot/auth-service/src/main/java/com/applypilot/auth/security/JwtUtil.java
+/home/rajathacharya/APPLYPILOT/Applypilot/auth-service/src/main/java/com/applypilot/auth/security/SecurityConfig.java
+/home/rajathacharya/APPLYPILOT/Applypilot/auth-service/src/main/java/com/applypilot/auth/service/AuthService.java
