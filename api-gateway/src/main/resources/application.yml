@@ -10,20 +10,38 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
-      mvc:
-        routes:
-          - id: auth-service
-            uri: lb://auth-service
-            predicates:
-              - Path=/auth/**
-          - id: tracker-service
-            uri: lb://tracker-service
-            predicates:
-              - Path=/applications/**
+      globalcors:
+        add-to-simple-url-handler-mapping: true
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - http://localhost:5173
+              - http://127.0.0.1:5173
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - PATCH
+              - DELETE
+              - OPTIONS
+            allowedHeaders:
+              - '*'
+            exposedHeaders:
+              - Authorization
+            allowCredentials: true
+      routes:
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/auth/**
+        - id: tracker-service
+          uri: lb://tracker-service
+          predicates:
+            - Path=/applications/**
 
 eureka:
   client:
-    serviceUrl:
+    service-url:
       defaultZone: http://localhost:8761/eureka/
   instance:
     preferIpAddress: true
