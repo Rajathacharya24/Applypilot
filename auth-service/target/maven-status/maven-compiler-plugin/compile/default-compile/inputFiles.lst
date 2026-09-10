@@ -3,6 +3,7 @@
 /home/rajathacharya/GITCommit/Applypilot/auth-service/src/main/java/com/applypilot/auth/dto/AuthResponse.java
 /home/rajathacharya/GITCommit/Applypilot/auth-service/src/main/java/com/applypilot/auth/dto/LoginRequest.java
 /home/rajathacharya/GITCommit/Applypilot/auth-service/src/main/java/com/applypilot/auth/dto/RegisterRequest.java
+/home/rajathacharya/GITCommit/Applypilot/auth-service/src/main/java/com/applypilot/auth/dto/UserDto.java
 /home/rajathacharya/GITCommit/Applypilot/auth-service/src/main/java/com/applypilot/auth/entity/User.java
 /home/rajathacharya/GITCommit/Applypilot/auth-service/src/main/java/com/applypilot/auth/repository/UserRepository.java
 /home/rajathacharya/GITCommit/Applypilot/auth-service/src/main/java/com/applypilot/auth/security/JwtFilter.java
