@@ -97,4 +97,21 @@ public class JobApplicationServiceTest {
         assertEquals(ApplicationStatus.INTERVIEW, app.getStatus());
         verify(repository, times(1)).save(app);
     }
+
+    @Test
+    void testGetApplicationStats() {
+        JobApplication app1 = new JobApplication();
+        app1.setStatus(ApplicationStatus.INTERVIEW);
+        JobApplication app2 = new JobApplication();
+        app2.setStatus(ApplicationStatus.OFFER);
+
+        when(repository.findByUserId(userId)).thenReturn(java.util.List.of(app1, app2));
+
+        com.applypilot.tracker.dto.JobApplicationStatsDto stats = service.getApplicationStats(userId);
+
+        assertEquals(2, stats.getTotalApplications());
+        assertEquals(1, stats.getActiveInterviews());
+        assertEquals(1, stats.getOffersCount());
+        assertEquals(100.0, stats.getResponseRatePercentage());
+    }
 }

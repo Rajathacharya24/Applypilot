@@ -2,6 +2,8 @@ package com.applypilot.tracker.controller;
 
 import com.applypilot.tracker.dto.CreateJobApplicationRequest;
 import com.applypilot.tracker.dto.JobApplicationDto;
+import com.applypilot.tracker.dto.JobApplicationStatsDto;
+import com.applypilot.tracker.dto.UpdateJobApplicationRequest;
 import com.applypilot.tracker.dto.UpdateStatusRequest;
 import com.applypilot.tracker.entity.ApplicationStatus;
 import com.applypilot.tracker.service.JobApplicationService;
@@ -27,8 +29,15 @@ public class JobApplicationController {
     @GetMapping
     public ResponseEntity<List<JobApplicationDto>> getAll(
             @AuthenticationPrincipal String userId,
-            @RequestParam(required = false) ApplicationStatus status) {
-        return ResponseEntity.ok(service.getAllApplications(UUID.fromString(userId), status));
+            @RequestParam(required = false) ApplicationStatus status,
+            @RequestParam(required = false) String search) {
+        return ResponseEntity.ok(service.getAllApplications(UUID.fromString(userId), status, search));
+    }
+
+    @GetMapping("/stats")
+    public ResponseEntity<JobApplicationStatsDto> getStats(
+            @AuthenticationPrincipal String userId) {
+        return ResponseEntity.ok(service.getApplicationStats(UUID.fromString(userId)));
     }
 
     @GetMapping("/{id}")
@@ -43,6 +52,14 @@ public class JobApplicationController {
             @Valid @RequestBody CreateJobApplicationRequest request,
             @AuthenticationPrincipal String userId) {
         return new ResponseEntity<>(service.createApplication(request, UUID.fromString(userId)), HttpStatus.CREATED);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<JobApplicationDto> update(
+            @PathVariable UUID id,
+            @Valid @RequestBody UpdateJobApplicationRequest request,
+            @AuthenticationPrincipal String userId) {
+        return ResponseEntity.ok(service.updateApplication(id, UUID.fromString(userId), request));
     }
 
     @PatchMapping("/{id}/status")
