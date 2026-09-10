@@ -1,5 +1,0 @@
-#surefire_0
-#Thu Sep 10 23:25:05 IST 2026
-basedir=/home/rajathacharya/GITCommit/Applypilot/auth-service
-localRepository=/home/rajathacharya/.m2/repository
-net.bytebuddy.experimental=true
