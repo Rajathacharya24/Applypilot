@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.applypilot.auth.service.AuthServiceTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.238 s <<< FAILURE! -- in com.applypilot.auth.service.AuthServiceTest
+com.applypilot.auth.service.AuthServiceTest.testRegisterSuccess -- Time elapsed: 0.015 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "java.util.UUID.toString()" because the return value of "com.applypilot.auth.entity.User.getId()" is null
+	at com.applypilot.auth.service.AuthService.register(AuthService.java:41)
+	at com.applypilot.auth.service.AuthServiceTest.testRegisterSuccess(AuthServiceTest.java:64)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
