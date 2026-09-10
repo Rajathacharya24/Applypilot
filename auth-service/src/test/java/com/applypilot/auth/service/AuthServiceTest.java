@@ -59,7 +59,7 @@ public class AuthServiceTest {
         savedUser.setPassword("encodedPassword");
         
         when(userRepository.save(any(User.class))).thenReturn(savedUser);
-        when(jwtUtil.generateToken(any(), eq("john@example.com"))).thenReturn("mockJwtToken");
+        when(jwtUtil.generateToken(userId.toString(), "john@example.com")).thenReturn("mockJwtToken");
 
         AuthResponse response = authService.register(request);
 

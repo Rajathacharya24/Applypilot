@@ -2,6 +2,8 @@
 /home/rajathacharya/GITCommit/Applypilot/tracker-service/src/main/java/com/applypilot/tracker/controller/JobApplicationController.java
 /home/rajathacharya/GITCommit/Applypilot/tracker-service/src/main/java/com/applypilot/tracker/dto/CreateJobApplicationRequest.java
 /home/rajathacharya/GITCommit/Applypilot/tracker-service/src/main/java/com/applypilot/tracker/dto/JobApplicationDto.java
+/home/rajathacharya/GITCommit/Applypilot/tracker-service/src/main/java/com/applypilot/tracker/dto/JobApplicationStatsDto.java
+/home/rajathacharya/GITCommit/Applypilot/tracker-service/src/main/java/com/applypilot/tracker/dto/UpdateJobApplicationRequest.java
 /home/rajathacharya/GITCommit/Applypilot/tracker-service/src/main/java/com/applypilot/tracker/dto/UpdateStatusRequest.java
 /home/rajathacharya/GITCommit/Applypilot/tracker-service/src/main/java/com/applypilot/tracker/entity/ApplicationStatus.java
 /home/rajathacharya/GITCommit/Applypilot/tracker-service/src/main/java/com/applypilot/tracker/entity/JobApplication.java

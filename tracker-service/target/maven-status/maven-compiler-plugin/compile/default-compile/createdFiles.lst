@@ -9,5 +9,5 @@ com/applypilot/tracker/repository/JobApplicationRepository.class
 com/applypilot/tracker/controller/JobApplicationController.class
 com/applypilot/tracker/dto/JobApplicationDto.class
 com/applypilot/tracker/security/JwtUtil.class
-com/applypilot/tracker/TrackerServiceApplication.class
 com/applypilot/tracker/security/SecurityConfig.class
+com/applypilot/tracker/TrackerServiceApplication.class
