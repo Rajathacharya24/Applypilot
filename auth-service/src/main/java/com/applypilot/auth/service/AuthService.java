@@ -3,6 +3,7 @@ package com.applypilot.auth.service;
 import com.applypilot.auth.dto.AuthResponse;
 import com.applypilot.auth.dto.LoginRequest;
 import com.applypilot.auth.dto.RegisterRequest;
+import com.applypilot.auth.dto.UserDto;
 import com.applypilot.auth.entity.User;
 import com.applypilot.auth.repository.UserRepository;
 import com.applypilot.auth.security.JwtUtil;
@@ -10,6 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class AuthService {
@@ -54,5 +56,11 @@ public class AuthService {
 
         String token = jwtUtil.generateToken(user.getId().toString(), user.getEmail());
         return new AuthResponse(token);
+    }
+
+    public UserDto getUserProfile(UUID userId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        return new UserDto(user.getId(), user.getEmail(), user.getName(), user.getCreatedAt());
     }
 }
