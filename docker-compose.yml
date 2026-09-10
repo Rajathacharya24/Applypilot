@@ -1,4 +1,5 @@
 version: '3.8'
+
 services:
   postgres:
     image: postgres:16-alpine
@@ -11,6 +12,16 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - applypilot-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: applypilot-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
     networks:
       - applypilot-network
 
@@ -27,13 +38,78 @@ services:
     networks:
       - applypilot-network
 
-  redis:
-    image: redis:7-alpine
-    container_name: applypilot-redis
+  eureka-server:
+    build:
+      context: .
+      dockerfile: eureka-server/Dockerfile
+    container_name: applypilot-eureka-server
     ports:
-      - "6379:6379"
-    volumes:
-      - redis_data:/data
+      - "8761:8761"
+    networks:
+      - applypilot-network
+
+  api-gateway:
+    build:
+      context: .
+      dockerfile: api-gateway/Dockerfile
+    container_name: applypilot-api-gateway
+    ports:
+      - "8080:8080"
+    depends_on:
+      - eureka-server
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
+    networks:
+      - applypilot-network
+
+  auth-service:
+    build:
+      context: .
+      dockerfile: auth-service/Dockerfile
+    container_name: applypilot-auth-service
+    ports:
+      - "8081:8081"
+    depends_on:
+      - postgres
+      - eureka-server
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/applypilot_db
+      SPRING_DATASOURCE_USERNAME: applypilot
+      SPRING_DATASOURCE_PASSWORD: applypilot_password
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
+    networks:
+      - applypilot-network
+
+  tracker-service:
+    build:
+      context: .
+      dockerfile: tracker-service/Dockerfile
+    container_name: applypilot-tracker-service
+    ports:
+      - "8082:8082"
+    depends_on:
+      - postgres
+      - redis
+      - eureka-server
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/applypilot_db
+      SPRING_DATASOURCE_USERNAME: applypilot
+      SPRING_DATASOURCE_PASSWORD: applypilot_password
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: 6379
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
+    networks:
+      - applypilot-network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: applypilot-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - api-gateway
     networks:
       - applypilot-network
 
