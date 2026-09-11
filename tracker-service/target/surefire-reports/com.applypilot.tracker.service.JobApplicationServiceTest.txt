@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.applypilot.tracker.service.JobApplicationServiceTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.222 s -- in com.applypilot.tracker.service.JobApplicationServiceTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.108 s -- in com.applypilot.tracker.service.JobApplicationServiceTest
